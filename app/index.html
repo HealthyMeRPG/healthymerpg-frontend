@@ -14,13 +14,12 @@
   </head>
   <body>
     <script>
-      window.HealthyMeRPGENV = {{ENV}};
-      window.EmberENV = window.HealthyMeRPGENV.EmberENV;
+      window.EmberENV = {{EMBER_ENV}};
     </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/healthy-me-rpg.js"></script>
     <script>
-      window.HealthyMeRPG = require('healthy-me-rpg/app')['default'].create(HealthyMeRPGENV.APP);
+      window.HealthyMeRpg = require('healthy-me-rpg/app')['default'].create({{APP_CONFIG}});
     </script>
   </body>
 </html>
