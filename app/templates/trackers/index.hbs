@@ -7,9 +7,15 @@
         </div>
         <div class="panel-body">
           <img src="/assets/images/trackers/fitbit_logo_350_85.png" alt="Fitbit" class="center-block img-responsive" />
-          <button class="btn btn-primary btn-block" {{action 'register' 'fitbit' on='click'}}>
-            Subscribe
-          </button>
+          {{#if hasFitbit}}
+            <button class="btn btn-danger btn-block" {{action 'unregister' 'fitbit' on='click'}} id="unregister_fitbit">
+              Unregister Tracker
+            </button>
+          {{else}}
+            <button class="btn btn-primary btn-block" {{action 'register' 'fitbit' on='click'}} id="register_fitbit">
+              Subscribe
+            </button>
+          {{/if}}
         </div>
       </div>
     </div>
