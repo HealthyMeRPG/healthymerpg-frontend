@@ -16,6 +16,20 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'simple-auth': {
+      authenticationRoute: 'sessions.new',
+      authorizer: 'simple-auth-authorizer:devise',
+      routeAfterAuthentication: 'dashboard',
+      routeIfAlreadyAuthenticated: 'dashboard',
+      sessionPropertyName: 'session',
+      store: 'simple-auth-session-store:local-storage'
+    },
+
+    'simple-auth-devise': {
+      serverTokenEndpoint: '/api/v1/sessions',
+      resourceName: 'user'
     }
   };
 

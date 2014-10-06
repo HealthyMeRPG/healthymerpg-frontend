@@ -13,10 +13,10 @@ module.exports = function(app) {
   var mocks      = globSync('./mocks/**/*.js', { cwd: __dirname }).map(require);
   var proxies    = globSync('./proxies/**/*.js', { cwd: __dirname }).map(require);
 
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({
-    extended: true
-  }));
+  // app.use(bodyParser.json());
+  // app.use(bodyParser.urlencoded({
+  //   extended: true
+  // }));
 
   mocks.forEach(function(route) { route(app); });
 

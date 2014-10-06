@@ -20,12 +20,19 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+app.import("bower_components/jquery-cookie/jquery.cookie.js");
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
   srcDir: '/',
   destDir: '/assets/bootstrap'
 });
 
-var allTrees = mergeTrees([app.toTree(), bootstrapFonts]);
+var fontawesomeFonts = pickFiles('bower_components/fontawesome/fonts', {
+  srcDir: '/',
+  destDir: '/assets/fontawesome'
+});
+
+var allTrees = mergeTrees([app.toTree(), bootstrapFonts, fontawesomeFonts]);
 var finalTree = allTrees;
 
 if (app.env === 'production') {
