@@ -22,6 +22,15 @@ var app = new EmberApp();
 
 app.import("bower_components/jquery-cookie/jquery.cookie.js");
 
+// high charts
+app.import("bower_components/highcharts-release/highcharts.src.js");
+app.import("bower_components/highcharts-release/highcharts-more.src.js");
+app.import("bower_components/highcharts-release/modules/solid-gauge.src.js");
+
+// numeral.js, a number formatting library
+app.import("bower_components/numeral/numeral.js");
+app.import("bower_components/numeral/languages.js");
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
   srcDir: '/',
   destDir: '/assets/bootstrap'
