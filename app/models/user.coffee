@@ -8,7 +8,7 @@ User = DS.Model.extend(
   password: DS.attr('string')
   passwordConfirmation: DS.attr('string')
 
-  trackers: DS.hasMany('tracker', async: true)
+  trackers: DS.hasMany('tracker', async: true) # the tracker is not loaded when the model is loaded
 
   fullName: (->
     "#{@get('firstName')} #{@get('lastName')}"

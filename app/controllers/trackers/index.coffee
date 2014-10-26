@@ -5,9 +5,17 @@ TrackerIndexController = Ember.ArrayController.extend(
     @get('model').filterBy('tracker', 'fitbit').get('firstObject')
   ).property('model.length')
 
+  jawboneTracker: (->
+    @get('model').filterBy('tracker', 'jawbone').get('firstObject')
+  ).property('model.length')
+
   hasFitbit: (->
     @get('fitbitTracker')?
   ).property('fitbitTracker')
+
+  hasJawbone: (->
+    @get('jawboneTracker')?
+  ).property('jawboneTracker')
 
   actions: {
     register: (tracker) ->
@@ -17,14 +25,12 @@ TrackerIndexController = Ember.ArrayController.extend(
       return
 
     unregister: (tracker) ->
-      return unless @get('fitbitTracker')?
-
       if confirm("Are you sure you wish to unregister the tracker #{tracker.capitalize()}?")
         # disable the button
         # Ember.$("#unregister_#{tracker}").prop('disabled', true)
 
         # delete the tracker
-        tracker = @get('fitbitTracker')
+        tracker = @get("#{tracker}Tracker")
         tracker.deleteRecord()
         tracker.save()
 

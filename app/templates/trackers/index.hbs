@@ -1,6 +1,7 @@
 <div class="container" id="trackers">
 
   <div class="row">
+
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -23,31 +24,23 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <img src="/assets/images/trackers/healthvault_logo_178_38.png" alt="HealthVault" class="center-block img-responsive" />
-        </div>
-        <div class="panel-body">
-          <button class="btn btn-primary btn-block" disabled="disabled">
-            Coming Soon
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
           <img src="/assets/images/trackers/jawbone-up-logo_197_38.png" alt="Jawbone" class="center-block img-responsive" />
         </div>
         <div class="panel-body">
-          <button class="btn btn-primary btn-block" disabled="disabled">
-            Coming Soon
-          </button>
+          {{#if hasJawbone}}
+            <button class="btn btn-danger btn-block" {{action 'unregister' 'jawbone' on='click'}} id="unregister_jawbone">
+              Unregister Tracker
+            </button>
+          {{else}}
+            <button class="btn btn-primary btn-block" {{action 'register' 'jawbone' on='click'}} id="register_jawbone">
+              Subscribe
+            </button>
+          {{/if}}
         </div>
       </div>
     </div>
-  </div>
 
-<div class="row">
+
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -60,7 +53,9 @@
         </div>
       </div>
     </div>
+  </div>
 
+<div class="row">
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">

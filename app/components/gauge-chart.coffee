@@ -3,11 +3,17 @@
 # import numeral from the global namespace
 { numeral } = window
 
+# component that creates a gauge chart
 GaugeChartComponent = Ember.Component.extend({
+
+  # initialize variables to be used by the component
   label: null
   minValue: 0
   maxValue: 100
+  value: 0
 
+  # returns the default configuration for the highchart
+  # see: http://api.highcharts.com/highcharts
   chartOptions: ->
     {
       chart:
@@ -44,34 +50,34 @@ GaugeChartComponent = Ember.Component.extend({
         enabled: false
     }
 
+  # data point for the chart
   seriesData: ->
     {
       name: @get('label')
-      data: [parseInt(@get('value'), 10)]
+      data: [parseInt(@get('value'), 10)] # parses value to int base-10
       dataLabels:
-        format: '<div style="text-align:center"><span style="font-size:25px;color:#000;">{y}{</div><span style="font-size:12px;color:silver">Goal: ' + numeral(@get('maxValue')).format('0,0') + '</span>'
+        format: '<div style="text-align:center"><span style="font-size:25px;color:#000;">{y}</span></div><span style="font-size:12px;color:silver">Goal: ' + numeral(@get('maxValue')).format('0,0') + '</span>'
     }
 
+  # trigger called by ember that is fired when the component is inserted into the page, not yet rendered
+  # schedules the afterRender event in Ember's afterRender queue to render
   didInsertElement: ->
     @_super.apply(@, arguments)
     Ember.run.scheduleOnce('afterRender', @, @afterRenderEvent)
     return
 
+  # renders the high chart on the page
   afterRenderEvent: ->
     @highChart = @$().highcharts(@chartOptions()).highcharts()
     @valueObserver()
     return
 
+  # observes changes in the value property and updates the high chart series
   valueObserver: (->
     return unless @highChart?
+    series = @highChart.series[0] # get first series in the chart
 
-    console.debug @highChart
-    series = @highChart.series[0]
-
-    console.debug 'value has changed: ', @get('value')
-    console.debug @highChart.options.chart
-    console.debug @seriesData()
-
+    # if the series exists, update it with the new value, if not, add it
     if series
       series.update(@seriesData())
     else

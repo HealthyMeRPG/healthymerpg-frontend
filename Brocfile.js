@@ -1,4 +1,5 @@
 /* global require, module */
+/* asset pipeline */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var pickFiles = require('broccoli-static-compiler');

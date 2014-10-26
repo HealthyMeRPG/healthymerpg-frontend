@@ -1,8 +1,7 @@
-# Healthy-me-rpg
+# HealthyMeRPG
 
-This README outlines the details of collaborating on this Ember application.
-
-A short introduction of this app could easily go here.
+HealthyMeRPG uses [Open mHealth](http://www.openmhealth.org/) API to use data gathered from supported fitness devices and applications to create a simple Role Playing Game (RPG), which rewards the user for meeting certain goals that contribute towards a healthy lifestyle. For example, a user may undergo a quest to take 10,000 steps in order to gain experience points and build up other attributes that will aggregate to an overall 
+health score for the user avatar.
 
 ## Prerequisites
 
@@ -13,7 +12,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:HealthyMeRPG/healthymerpg-frontend.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
@@ -25,7 +24,7 @@ You will need the following things properly installed on your computer.
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+Make use of the many generators for code, try `ember help generate` for more details.
 
 ### Running Tests
 
@@ -37,10 +36,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
 ## Further Reading / Useful Links
 
 * ember: http://emberjs.com/
@@ -48,4 +43,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
