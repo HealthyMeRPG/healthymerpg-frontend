@@ -1,0 +1,35 @@
+{{#if quest.staminaReward}}
+  <li>
+    {{#bs-tooltip bsTitle="Stamina"}}
+      <i class="fa fa-heart fa-fw"></i>+{{quest.staminaReward}}%
+    {{/bs-tooltip}}
+  </li>
+{{/if}}
+{{#if quest.strengthReward}}
+  <li>
+    {{#bs-tooltip bsTitle="Strength"}}
+      <i class="fa fa-gavel fa-fw"></i>+{{quest.strengthReward}}%
+    {{/bs-tooltip}}
+  </li>
+{{/if}}
+{{#if quest.mindReward}}
+  <li>
+    {{#bs-tooltip bsTitle="Mind"}}
+      <i class="fa fa-graduation-cap fa-fw"></i>+{{quest.mindReward}}%
+    {{/bs-tooltip}}
+  </li>
+{{/if}}
+{{#if quest.vitalityReward}}
+  <li>
+    {{#bs-tooltip bsTitle="Vitality"}}
+      <i class="fa fa-shield fa-fw"></i>+{{quest.vitalityReward}}%
+    {{/bs-tooltip}}
+  </li>
+{{/if}}
+{{#if quest.agilityReward}}
+  <li>
+    {{#bs-tooltip bsTitle="Agility"}}
+      <i class="fa fa-child fa-fw"></i>+{{quest.agilityReward}}%
+    {{/bs-tooltip}}
+  </li>
+{{/if}}

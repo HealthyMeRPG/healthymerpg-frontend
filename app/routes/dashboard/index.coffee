@@ -9,7 +9,10 @@ DashboardRoute = Ember.Route.extend(AuthenticatedRouteMixin, {
   }
 
   model: (params, transition, queryParams) ->
-    Ember.$.getJSON('/api/v1/dashboard/metrics', date: params.currentDate)
+    Ember.RSVP.hash(
+      metrics: Ember.$.getJSON('/api/v1/dashboard/metrics', date: params.currentDate)
+      quests: @store.find('quest')
+    )
 })
 
 `export default DashboardRoute`

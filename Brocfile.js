@@ -23,6 +23,9 @@ var app = new EmberApp();
 
 app.import("bower_components/jquery-cookie/jquery.cookie.js");
 
+// bootstrap
+app.import("bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js");
+
 // high charts
 app.import("bower_components/highcharts-release/highcharts.src.js");
 app.import("bower_components/highcharts-release/highcharts-more.src.js");

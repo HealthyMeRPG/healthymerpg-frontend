@@ -29,7 +29,7 @@
                             <i class="icon"><img src="/assets/images/steps.png" alt="steps-icon" /></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.steps}}</div>
+                            <div class="huge">{{content.metrics.steps}}</div>
                             <div>Steps</div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                             <i class="icon"><img src="/assets/images/stair-icon.png" alt="stairs-icon" /></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.activity.floors}}</div>
+                            <div class="huge">{{content.metrics.activity.floors}}</div>
                             <div>Floors Climbed</div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                             <i class="fa fa-fire fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.activity.calories_burned}}</div>
+                            <div class="huge">{{content.metrics.activity.calories_burned}}</div>
                             <div>Calories Burned</div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                             <i class="fa fa-bolt fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.activity.very_active_minutes}}</div>
+                            <div class="huge">{{content.metrics.activity.very_active_minutes}}</div>
                             <div>Very Active Minutes</div>
                         </div>
                     </div>
@@ -184,11 +184,11 @@
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-exclamation fa-fw"></i> Active Quests</h3>
+                    <h3 class="panel-title"><i class="fa fa-exclamation fa-fw"></i> Daily Quests</h3>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped">
+                        <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>Quest</th>
@@ -197,16 +197,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Take 10,000 steps today</td>
-                                    <td><i class="fa fa-heart fa-fw"></i>+6%, <i class="fa fa-fw fa-shield"></i>+4%</td>
-                                    <td>In progress</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>Take 5,000 steps today</td>
-                                    <td><i class="fa fa-heart fa-fw"></i>+3%, <i class="fa fa-fw fa-shield"></i>+2%</td>
-                                    <td>Completed</td>
-                                </tr>
+                                {{#each quest in content.quests}}
+                                    <tr>
+                                        <td>{{quest.title}}</td>
+                                        <td>{{quest-rewards quest=quest}}</td>
+                                        <td>{{quest-status quest=quest metrics=content.metrics}}
+                                    </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>
