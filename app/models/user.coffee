@@ -9,6 +9,7 @@ User = DS.Model.extend(
   passwordConfirmation: DS.attr('string')
 
   trackers: DS.hasMany('tracker', async: true) # the tracker is not loaded when the model is loaded
+  score: DS.belongsTo('score', async: true) # score the user belongs to
 
   fullName: (->
     "#{@get('firstName')} #{@get('lastName')}"

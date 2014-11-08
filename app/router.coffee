@@ -11,7 +11,8 @@ Router.map(->
   )
   @route('register')
 
-  @route('dashboard')
+  @resource('dashboard', ->
+  )
   @resource('trackers', ->
   )
 )

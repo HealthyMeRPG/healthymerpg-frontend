@@ -6,8 +6,9 @@ $icon-font-path: '/assets/bootstrap/';
 $fa-font-path: '/assets/fontawesome';
 @import "bower_components/fontawesome/scss/font-awesome";
 
-// Trackers Page
+// Partials
 @import "trackers";
+@import "dashboard";
 
 // Custom CSS
 .navbar-logo {

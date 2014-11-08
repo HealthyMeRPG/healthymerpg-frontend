@@ -32,6 +32,9 @@ app.import("bower_components/highcharts-release/modules/solid-gauge.src.js");
 app.import("bower_components/numeral/numeral.js");
 app.import("bower_components/numeral/languages.js");
 
+// moment.js, a time formatting library
+app.import("bower_components/moment/moment.js");
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
   srcDir: '/',
   destDir: '/assets/bootstrap'
