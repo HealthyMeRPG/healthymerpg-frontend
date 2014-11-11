@@ -34,6 +34,8 @@ GaugeChartComponent = Ember.Component.extend({
           [0.5, '#DDDF0D'] # yellow
           [0.9, '#55BF3B'] # green
         ]
+        labels:
+          enabled: false
         lineWidth: 0
         minorTickInterval: null
         startOnTick: true

@@ -9,10 +9,16 @@ DashboardRoute = Ember.Route.extend(AuthenticatedRouteMixin, {
   }
 
   model: (params, transition, queryParams) ->
-    Ember.RSVP.hash(
-      metrics: Ember.$.getJSON('/api/v1/dashboard/metrics', date: params.currentDate)
-      quests: @store.find('quest')
-    )
+    date = params.currentDate
+    date ||= moment().format("YYYY-MM-DD")
+
+    @store.find('activity', { activity_date: date })
+
+  setupController: (controller, model) ->
+    @_super(controller, model.get('firstObject')) # get the first object because store.find() will return a promise array
+
+    unless controller.get('quests')?
+      controller.set('quests', @store.find('quest'))
 })
 
 `export default DashboardRoute`

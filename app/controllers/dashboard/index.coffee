@@ -2,7 +2,7 @@
 
 { moment } = window
 
-DashboardController = Ember.Controller.extend(
+DashboardController = Ember.ObjectController.extend(
 
   needs: ['application']
 

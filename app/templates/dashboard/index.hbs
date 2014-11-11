@@ -1,22 +1,3 @@
-{{!-- <div class="container">
-
-  <div class="row">
-
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Steps</h3>
-        </div>
-        <div class="panel-body">
-          {{gauge-chart label="Steps" value=content.steps maxValue="10000"}}
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</div> --}}
-
 <div class="container-fluid">
     {{partial 'dashboard/header'}}
     <div class="row">
@@ -29,7 +10,7 @@
                             <i class="icon"><img src="/assets/images/steps.png" alt="steps-icon" /></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.metrics.steps}}</div>
+                            <div class="huge">{{content.steps}}</div>
                             <div>Steps</div>
                         </div>
                     </div>
@@ -52,7 +33,7 @@
                             <i class="icon"><img src="/assets/images/stair-icon.png" alt="stairs-icon" /></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.metrics.activity.floors}}</div>
+                            <div class="huge">{{content.floors_climbed}}</div>
                             <div>Floors Climbed</div>
                         </div>
                     </div>
@@ -74,7 +55,7 @@
                             <i class="fa fa-fire fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.metrics.activity.calories_burned}}</div>
+                            <div class="huge">{{content.calories_burned}}</div>
                             <div>Calories Burned</div>
                         </div>
                     </div>
@@ -96,7 +77,7 @@
                             <i class="fa fa-bolt fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">{{content.metrics.activity.very_active_minutes}}</div>
+                            <div class="huge">{{content.very_active_minutes}}</div>
                             <div>Very Active Minutes</div>
                         </div>
                     </div>
@@ -151,26 +132,26 @@
                 <div class="panel-body">
                     {{#if score}}
                         <div class="list-group">
-                            <a href="#" class="list-group-item">
+                            <div class="list-group-item">
                                 <span {{bind-attr class=":badge staminaClass"}}>{{score.stamina}}%</span>
                                 <i class="fa fa-fw fa-heart"></i> Stamina
-                            </a>
-                            <a href="#" class="list-group-item">
+                            </div>
+                            <div class="list-group-item">
                                 <span {{bind-attr class=":badge strengthClass"}}>{{score.strength}}%</span>
                                 <i class="fa fa-fw fa-gavel"></i> Strength
-                            </a>
-                            <a href="#" class="list-group-item">
+                            </div>
+                            <div class="list-group-item">
                                 <span {{bind-attr class=":badge mindClass"}}>{{score.mind}}%</span>
                                 <i class="fa fa-fw fa-graduation-cap"></i> Mind
-                            </a>
-                            <a href="#" class="list-group-item">
+                            </div>
+                            <div class="list-group-item">
                                 <span {{bind-attr class=":badge vitalityClass"}}">{{score.vitality}}%</span>
                                 <i class="fa fa-fw fa-shield"></i> Vitality
-                            </a>
-                            <a href="#" class="list-group-item">
+                            </div>
+                            <div class="list-group-item">
                                 <span {{bind-attr class=":badge agilityClass"}}>{{score.agility}}%</span>
                                 <i class="fa fa-fw fa-child"></i> Agility
-                            </a>
+                            </div>
                         </div>
                     {{else}}
                         <em>Loading...</em>
@@ -197,11 +178,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{#each quest in content.quests}}
+                                {{#each quest in quests}}
                                     <tr>
                                         <td>{{quest.title}}</td>
                                         <td>{{quest-rewards quest=quest}}</td>
-                                        <td>{{quest-status quest=quest metrics=content.metrics}}
+                                        <td>{{quest-status quest=quest metrics=content}}
                                     </tr>
                                 {{/each}}
                             </tbody>
