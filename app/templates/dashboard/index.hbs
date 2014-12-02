@@ -102,7 +102,7 @@
                     <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> History Chart</h3>
                 </div>
                 <div class="panel-body">
-                    <div id="morris-area-chart"></div>
+                    {{line-chart seriesName='Score' values=scoreHistory nameProperty='name' valueProperty='score' yAxisLegend='Score'}}
                 </div>
             </div>
         </div>
@@ -181,7 +181,7 @@
                             <tbody>
                                 {{#each quest in quests}}
                                     <tr>
-                                        <td>{{quest-icon quest=quest}} {{quest.title}}</td>
+                                        <td>{{!quest-icon quest=quest}} {{quest.title}}</td>
                                         <td>{{quest-rewards quest=quest}}</td>
                                         <td>{{quest-status quest=quest metrics=content}}
                                     </tr>

@@ -10,6 +10,7 @@ DashboardController = Ember.ObjectController.extend(
   currentUser: Ember.computed.oneWay('controllers.application.currentUser')
 
   score: null
+  scoreHistory: []
   queryParams: {
     currentDate: "date"
   }
