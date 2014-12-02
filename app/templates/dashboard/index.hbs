@@ -7,7 +7,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="icon"><img src="/assets/images/steps.png" alt="steps-icon" /></i>
+                            <i class="icon-steps icon-steps-large"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{content.steps}}</div>
@@ -30,7 +30,8 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="icon"><img src="/assets/images/stair-icon.png" alt="stairs-icon" /></i>
+                            {{!-- <i class="icon"><img src="/assets/images/stair-icon.png" alt="stairs-icon" /></i> --}}
+                            <i class="icon-stairs icon-stairs-large"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">{{content.floors_climbed}}</div>
@@ -180,7 +181,7 @@
                             <tbody>
                                 {{#each quest in quests}}
                                     <tr>
-                                        <td>{{quest.title}}</td>
+                                        <td>{{quest-icon quest=quest}} {{quest.title}}</td>
                                         <td>{{quest-rewards quest=quest}}</td>
                                         <td>{{quest-status quest=quest metrics=content}}
                                     </tr>

@@ -1,0 +1,32 @@
+//
+// Icon Font: <%= font_name %>
+//
+
+@font-face {
+  font-family: "<%= font_name %>";
+  src: url("#{$fc-font-path}<%= File.basename(@font_path) %>.eot");
+  src: url("#{$fc-font-path}<%= File.basename(@font_path) %>.eot?#iefix") format("embedded-opentype"),
+       url("#{$fc-font-path}<%= File.basename(@font_path) %>.woff") format("woff"),
+       url("#{$fc-font-path}<%= File.basename(@font_path) %>.ttf") format("truetype"),
+       url("#{$fc-font-path}<%= File.basename(@font_path) %>.svg#<%= font_name %>") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "<%= font_name %>";
+    src: url("#{$fc-font-path}<%= File.basename(@font_path) %>.svg#<%= font_name %>") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+<%= glyph_selectors %> {
+<%= glyph_properties %>
+}
+
+<%= glyphs %>
+<% @glyphs.each do |name, value| %>
+$font-<%= font_name.gsub(/[^\w\d_]/, '-') %>-<%= name.to_s %>: "\<%= value[:codepoint].to_s(16) %>";<% end %>

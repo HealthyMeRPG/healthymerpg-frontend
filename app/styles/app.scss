@@ -6,6 +6,10 @@ $icon-font-path: '/assets/bootstrap/';
 $fa-font-path: '/assets/fontawesome';
 @import "bower_components/fontawesome/scss/font-awesome";
 
+// Font Custom
+$fc-font-path: '/assets/fontcustom/';
+@import "vendor/fontcustom/css/ember-fontcustom";
+
 // Partials
 @import "trackers";
 @import "dashboard";
@@ -13,4 +17,12 @@ $fa-font-path: '/assets/fontawesome';
 // Custom CSS
 .navbar-logo {
   padding: 10px;
+}
+
+.icon-steps-large {
+  font-size: 2.5em;
+}
+
+.icon-stairs-large {
+  font-size: 3em;
 }

@@ -48,7 +48,12 @@ var fontawesomeFonts = pickFiles('bower_components/fontawesome/fonts', {
   destDir: '/assets/fontawesome'
 });
 
-var allTrees = mergeTrees([app.toTree(), bootstrapFonts, fontawesomeFonts]);
+var fontcustomFonts = pickFiles('vendor/fontcustom/fonts', {
+  srcDir: '/',
+  destDir: '/assets/fontcustom'
+});
+
+var allTrees = mergeTrees([app.toTree(), bootstrapFonts, fontawesomeFonts, fontcustomFonts]);
 var finalTree = allTrees;
 
 if (app.env === 'production') {

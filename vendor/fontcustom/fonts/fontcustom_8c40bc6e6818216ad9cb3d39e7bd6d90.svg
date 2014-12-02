@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2014-11-17: Created.
+-->
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Mon Nov 17 23:41:52 2014
+ By Noranda Brown
+Created by Noranda Brown with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="fontcustom" horiz-adv-x="512" >
+  <font-face 
+    font-family="fontcustom"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 9 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -512 638.97 448"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+F100-F101"
+  />
+    <missing-glyph />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
+d="M136 384c75.0996 0 117.93 -85.29 117.93 -209c0 -68.8301 -51.9492 -98.54 -49.9297 -173c1.11035 -41.2803 26.0801 -89.6602 26.0801 -120.03c0 -89.1797 -37.75 -137.97 -94.0801 -137.97s-88.7002 73.1699 -102 161.46c-16.9805 112.7 -34 185.71 -34 254.54
+c0 123.71 60.8896 224 136 224zM502.97 128c75.1104 0 136 -100.29 136 -224c0 -68.8301 -17.0195 -141.84 -34 -254.54c-13.2998 -88.29 -45.6699 -161.46 -102 -161.46s-94.0801 48.79 -94.0801 137.97c0 30.3701 24.9717 78.75 26.0801 120.03
+c2.02051 74.46 -49.9297 104.17 -49.9297 173c0 123.71 42.8301 209 117.93 209z" />
+    <glyph glyph-name="uniF100" unicode="&#xf100;" 
+d="M0 124.026h80.0498v81.4746h79.5342v82.0254h80.7891v80.5h80.2412v79.9736h119.138v-40.8037h-79.2021v-80.2783h-80.332v-81.4082h-80.168v-80.9834h-80.5v-81.6709h-119.55v41.1709zM358.843 210.112c10.207 0 17.2529 -7.08594 17.2529 -17.5859v-70.3545
+c-0.0458984 -20.25 -30.2959 -19.5 -30.1924 0v35.916l-67.9854 -68.1729c-16.2539 -16.2529 -37.8916 5.88477 -22.5928 21.1846l69.0117 69.0127h-36.2871c-20.25 0 -19.5 30 0 30h70.793z" />
+  </font>
+</defs></svg>
